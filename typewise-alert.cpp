@@ -15,7 +15,7 @@ BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
 BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
   int lowerLimit = 0;
-  std::map<coolingType,int> upperLimit {
+  std::map<coolingType,int> upperLimits {
     { PASSIVE_COOLING, 35 },
     { HI_ACTIVE_COOLING, 45 },
     { MED_ACTIVE_COOLING, 40 }    
@@ -31,7 +31,8 @@ BreachType classifyTemperatureBreach(
   //     upperLimit = 40;
   //     break;
   // }
-  return inferBreach(temperatureInC, lowerLimit, upperLimit[coolingType]);
+  int upperLimit = upperLimits[coolingType];
+  return inferBreach(temperatureInC, lowerLimit, upperLimit);
 }
 
 void checkAndAlert(

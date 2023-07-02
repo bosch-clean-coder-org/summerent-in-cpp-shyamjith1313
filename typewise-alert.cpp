@@ -19,7 +19,7 @@ BreachType classifyTemperatureBreach(
     { PASSIVE_COOLING, 35 },
     { HI_ACTIVE_COOLING, 45 },
     { MED_ACTIVE_COOLING, 40 }    
-  }
+  };
   // switch(coolingType) {
   //   case PASSIVE_COOLING:
   //     upperLimit = 35;
